@@ -4,10 +4,7 @@
     "version": "1.0",
     "content_scripts": [{
           "matches": ["<all_urls>"],
-          "js": [
-                "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js",
-                "my_shortcuts.js"
-                ]
+          "js": ["my_shortcuts.js"]
     }],
     "manifest_version": 3,
     "permissions": ["storage", "declarativeContent", "activeTab", "scripting", "tabs"]
