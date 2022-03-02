@@ -4,8 +4,12 @@
     "version": "1.0",
     "content_scripts": [{
           "matches": ["<all_urls>"],
-          "js": ["my_shortcuts.js"]
+          "js": [
+                "jquery-3.6.min.js",
+                "my_shortcuts.js"
+                ]
     }],
     "manifest_version": 3,
     "permissions": ["storage", "declarativeContent", "activeTab", "scripting", "tabs"]
 }
+
