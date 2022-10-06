@@ -17,6 +17,12 @@ $(document).keydown(function(e)
 	// 	isG = false; // Si on se trouve dans un input, une textarea ou si on n'a pas pressé la touche CTRL, on ne peut pas faire des raccourcis clavier
 	// 	return false;
 	// }
+	if (isG != true)
+	{ 
+		isG = false; // Si on n'a pas pressé la touche CTRL, on ne peut pas faire des raccourcis clavier
+	    return false;
+	}
+
 
 	if (e.keyCode == true)
 	{
@@ -33,8 +39,6 @@ $(document).keydown(function(e)
 		case 66:
             research_google_text_highlighted();
 			return false;
-			break;
-
 	}
 	
 	isG = false; // On réinitialise le booléen
@@ -55,8 +59,8 @@ function research_google_text_highlighted(){
 		selectedText = document.selection.createRange().text;
 	}
 	if  (selectedText != ''){
-		navigator.clipboard.writeText(selectedText).then(res=>{
-			window.open('https://google.com','_blank');
-		});
+		selectedTextFormatted = selectedText.replace(" ", "+").
+		window.open('https://google.com/search?q='+selectedTextFormatted,'_blank')
 	}
 }
+
