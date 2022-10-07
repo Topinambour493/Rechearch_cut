@@ -19,8 +19,8 @@ $(document).keydown(function(e)
 	// }
 	if (isG != true)
 	{ 
-		isG = false; // Si on n'a pas pressé la touche CTRL, on ne peut pas faire des raccourcis clavier
-	    return false;
+	    return false;// Si on n'a pas pressé la touche CTRL, on ne peut pas faire des raccourcis clavier
+
 	}
 
 
@@ -45,7 +45,6 @@ $(document).keydown(function(e)
 });
 
 function research_google_text_highlighted(){
-	var selectedText = '';
 	// window.getSelection
 	if (window.getSelection) {
 		selectedText = window.getSelection();
@@ -58,9 +57,9 @@ function research_google_text_highlighted(){
 	else if (document.selection) {
 		selectedText = document.selection.createRange().text;
 	}
-	if  (selectedText != ''){
-		selectedTextFormatted = selectedText.replace(" ", "+").
-		window.open('https://google.com/search?q='+selectedTextFormatted,'_blank')
+	if  (selectedText){
+		console.log(selectedText)
+		selectedTextFormatted = selectedText.toString().replace(" ", "+");
+		window.open('https://google.com/search?q='+selectedTextFormatted,'_blank');
 	}
 }
-
