@@ -37,17 +37,28 @@ $(document).keydown(function(e)
 	{
 		// CTRL + B
 		case 66:
-            research_google_text_highlighted();
+            research_text_highlighted_in('https://google.com/search?q=');
+			return false;
+		// CTRL + Y
+		case 89:
+			research_text_highlighted_in('https://www.youtube.com/results?search_query=');
 			return false;
 	}
 	
 	isG = false; // On réinitialise le booléen
 });
 
-function research_google_text_highlighted(){
+function research_text_highlighted_in(site_url){
 	// window.getSelection
+	var selectedTextFormatted = getSelectedTextFormatted();
+	if (selectedTextFormatted){
+		window.open(site_url+selectedTextFormatted,'_blank');
+	}
+}
+
+function getSelectedTextFormatted(){
 	if (window.getSelection) {
-		selectedText = window.getSelection();
+		var selectedText = window.getSelection();
 	}
 	// document.getSelection
 	else if (document.getSelection) {
@@ -57,9 +68,9 @@ function research_google_text_highlighted(){
 	else if (document.selection) {
 		selectedText = document.selection.createRange().text;
 	}
-	if  (selectedText){
-		console.log(selectedText)
-		selectedTextFormatted = selectedText.toString().replace(" ", "+");
-		window.open('https://google.com/search?q='+selectedTextFormatted,'_blank');
+	if  (selectedText) {
+		var selectedTextFormatted = selectedText.toString().replace(" ", "+");
+		return selectedTextFormatted 
 	}
+	return null
 }
