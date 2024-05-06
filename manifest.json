@@ -1,6 +1,6 @@
 {
     "name": "my_shortcuts",
-    "description": "pleins de raccourcis ( pour l'instant un seul) :)",
+    "description": "Ajout de raccourcis clavier pour le navigateur. ctrl + B: research selected text in Google ctrl + M: research selected text in Google Maps ctrl + Y: research selected text in Youtube",
     "version": "1.0",
     "content_scripts": [{
           "matches": ["<all_urls>"],

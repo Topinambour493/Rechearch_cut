@@ -1,4 +1,5 @@
-# Rechearch_cut
+# Research_cut
 
-ctrl + B: reaserch selected text in Google
-ctrl + Y: reaserch selected text in Youtube
+ctrl + B: research selected text in Google
+ctrl + M: research selected text in Google Maps
+ctrl + Y: research selected text in Youtube
