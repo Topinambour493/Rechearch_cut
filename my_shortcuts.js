@@ -43,6 +43,10 @@ $(document).keydown(function(e)
 		case 77:
 			research_text_highlighted_in('https://www.google.com/maps/place/');
 			return false;
+		// CTRL + Q
+		case 81:
+			research_text_highlighted_in('https://translate.google.com/?text=');
+			return false;
 		// CTRL + Y
 		case 89:
 			research_text_highlighted_in('https://www.youtube.com/results?search_query=');
